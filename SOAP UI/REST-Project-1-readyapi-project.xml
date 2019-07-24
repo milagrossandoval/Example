@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="dec0729d-5737-4b31-ba1a-afb323f6858f" created="2.7.0" activeEnvironment="Default environment" name="REST Project 1" resourceRoot="" updated="2.7.0 2019-05-30T13:25:24Z" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:RestService" id="5526eaa5-e6dd-4122-b0ca-a9d00adfbaff" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://restcountries.eu" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>https://restcountries.eu</con:endpoint>
+    </con:endpoints>
+    <con:resource name="{code}" path="/rest/v2/alpha/{code}" id="39dcf74d-647b-4ea7-bbe1-415298204549">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter required="true">
+          <con:name>code</con:name>
+          <con:value>code</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:default>code</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="c54983b3-4e83-419d-8dc3-5c4e2b935123" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:ge="https://restcountries.eu/rest/v2/alpha/GE">ge:Response</con:element>
+        </con:representation>
+        <con:representation type="FAULT">
+          <con:mediaType>application/json;charset=utf-8</con:mediaType>
+          <con:status>400 404</con:status>
+          <con:params/>
+          <con:element xmlns:ge="https://restcountries.eu/rest/v2/alpha/GE">ge:Fault</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="b4314b55-e4bb-43ec-9b31-4dd48a1c2f29" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://restcountries.eu</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://restcountries.eu/rest/v2/alpha/GE</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters>
+            <entry key="code" value="PE" xmlns="http://eviware.com/soapui/config"/>
+          </con:parameters>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="all" path="/rest/v2/all" id="8a141a3c-634c-4b9b-ba8c-0c3a9bba550e">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Method 1" id="81b094b3-e12a-4d28-befb-2e5e0f8b4400" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="Request 1" id="95975cd6-133c-47be-b4f1-9db4d02b9ff3" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>https://restcountries.eu</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="add" path="/rest/v2/add" id="2982df77-eba9-4e3b-ada6-18ce7902f161">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Method 1" id="9c2f9933-1310-410c-8efc-301a694fe693" method="POST">
+        <con:settings/>
+        <con:parameters>
+          <con:parameter required="true">
+            <con:name>name</con:name>
+            <con:value/>
+            <con:style>QUERY</con:style>
+            <con:default/>
+          </con:parameter>
+          <con:parameter required="true">
+            <con:name>alpha2_code</con:name>
+            <con:value/>
+            <con:style>QUERY</con:style>
+            <con:default/>
+          </con:parameter>
+          <con:parameter required="true">
+            <con:name>alpha3_code</con:name>
+            <con:value/>
+            <con:style>QUERY</con:style>
+            <con:default/>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="FAULT">
+          <con:mediaType xsi:nil="true"/>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params/>
+        </con:representation>
+        <con:request name="Request 1" id="3083acf0-b865-4def-bef6-e52be382e4aa" mediaType="application/json" postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://restcountries.eu</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:parameters>
+            <con:entry key="name" value="Test Country"/>
+            <con:entry key="alpha3_code" value="TCY"/>
+            <con:entry key="alpha2_code" value="TC"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>name</con:entry>
+            <con:entry>alpha2_code</con:entry>
+            <con:entry>alpha3_code</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="542ce1eb-4cb0-4f20-9f16-d6e3996d32d3" name="Get each country">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="f5543be2-3a40-4f92-921e-6e2f98000aed" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="GetEachCountry" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="datasource" name="DataSource" id="18ebbbe1-3179-4b09-850a-b43715922034">
+        <con:settings/>
+        <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:dataSource type="Excel">
+            <con:configuration>
+              <file>D:/CigniumDemo/SOAP UI/GetEachCountry.xlsx</file>
+              <worksheet>Hoja1</worksheet>
+              <cell>A1</cell>
+              <ignoreEmpty>false</ignoreEmpty>
+              <evaluateFormulas>false</evaluateFormulas>
+            </con:configuration>
+          </con:dataSource>
+          <con:shared>true</con:shared>
+          <con:restartShared>true</con:restartShared>
+          <con:property>Codigo</con:property>
+          <con:property>Valor Esperado</con:property>
+          <con:property>Assert</con:property>
+          <con:startRow>1</con:startRow>
+          <con:endRow/>
+          <con:recordsPerIteration>1</con:recordsPerIteration>
+          <con:completeLastOperation>true</con:completeLastOperation>
+          <con:trimValues>false</con:trimValues>
+          <con:entitizeValues>false</con:entitizeValues>
+          <con:restartOnRun>true</con:restartOnRun>
+          <con:expandProperties>false</con:expandProperties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Method 1 - Request 1 2" id="c077559b-026d-486d-975e-60760cc53ddb">
+        <con:settings/>
+        <con:config service="https://restcountries.eu" resourcePath="/rest/v2/alpha/{code}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Method 1 - Request 1 2" id="b4314b55-e4bb-43ec-9b31-4dd48a1c2f29" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/alpha/GE</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <entry key="code" value="${DataSource#Codigo}" xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="transfer" name="PropertyTransfer 1" id="5f84cb9f-8662-4f41-9107-060fdbb37897">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+            <con:name>name</con:name>
+            <con:sourceType>Response</con:sourceType>
+            <con:sourceStep>Method 1 - Request 1 2</con:sourceStep>
+            <con:sourcePath>$['name']</con:sourcePath>
+            <con:targetType>name</con:targetType>
+            <con:targetStep>DataSink</con:targetStep>
+            <con:targetPath/>
+            <con:type>JSONPATH</con:type>
+            <con:upgraded>true</con:upgraded>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasink" name="DataSink" id="b7ce361c-193a-4c4b-a0e7-24a872f9281e">
+        <con:settings/>
+        <con:config xsi:type="con:DataSinkStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:dataSink type="Excel">
+            <con:configuration>
+              <file/>
+              <outfile>D:/CigniumDemo/SOAP UI/GetEachCountry.xlsx</outfile>
+              <worksheet>Hoja1</worksheet>
+              <cell>C2</cell>
+              <evaluateFormulas>false</evaluateFormulas>
+              <append>false</append>
+            </con:configuration>
+          </con:dataSink>
+          <con:properties>
+            <con:property>
+              <con:name>name</con:name>
+              <con:value>United Kingdom of Great Britain and Northern Ireland</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasourceloop" name="DataSource Loop" id="23e9e4e2-b1e5-41de-bf7d-a420acd5f232">
+        <con:settings/>
+        <con:config>
+          <dataSourceStep>DataSource</dataSourceStep>
+          <targetStep>Method 1 - Request 1 2</targetStep>
+          <discardResults>true</discardResults>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>18ebbbe1-3179-4b09-850a-b43715922034</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>c077559b-026d-486d-975e-60760cc53ddb</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>23e9e4e2-b1e5-41de-bf7d-a420acd5f232</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+      <con:breakPoints>
+        <con:testStepId>b7ce361c-193a-4c4b-a0e7-24a872f9281e</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:testSuite id="ead5d20a-9ded-440e-90b6-145482b66d25" name="AddCountry">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="303b7b53-9bff-4e3a-8f48-1123817c2811" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="AddCountry" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="datasource" name="DataSource" id="1b455108-70ac-4f7b-8d47-268c363f9b45">
+        <con:settings/>
+        <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:dataSource type="Excel">
+            <con:configuration>
+              <file>D:/CigniumDemo/SOAP UI/AddCountry.xlsx</file>
+              <worksheet>Hoja1</worksheet>
+              <cell>A1</cell>
+              <ignoreEmpty>false</ignoreEmpty>
+              <evaluateFormulas>false</evaluateFormulas>
+            </con:configuration>
+          </con:dataSource>
+          <con:shared>true</con:shared>
+          <con:restartShared>true</con:restartShared>
+          <con:property>Name</con:property>
+          <con:property>Alpha2_code</con:property>
+          <con:property>Alpha3_code</con:property>
+          <con:completeLastOperation>true</con:completeLastOperation>
+          <con:restartOnRun>true</con:restartOnRun>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Method 1 - Request 1" id="60deb779-98f4-4180-91a3-7a4f9766eb63">
+        <con:settings/>
+        <con:config service="https://restcountries.eu" resourcePath="/rest/v2/add" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Method 1 - Request 1" id="3083acf0-b865-4def-bef6-e52be382e4aa" mediaType="application/json" postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://restcountries.eu</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://restcountries.eu/rest/v2/add</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters>
+              <con:entry key="name" value="${DataSource#name}"/>
+              <con:entry key="alpha3_code" value="${DataSource#alpha3_code}"/>
+              <con:entry key="alpha2_code" value="${DataSource#alpha2_code}"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>name</con:entry>
+              <con:entry>alpha2_code</con:entry>
+              <con:entry>alpha3_code</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasourceloop" name="DataSource Loop" id="719e6b52-a0cd-4c60-83d0-cdcc353324f3">
+        <con:settings/>
+        <con:config>
+          <dataSourceStep>DataSource</dataSourceStep>
+          <targetStep>Method 1 - Request 1</targetStep>
+          <discardResults>true</discardResults>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+      <con:breakPoints>
+        <con:testStepId>1b455108-70ac-4f7b-8d47-268c363f9b45</con:testStepId>
+        <con:status>NONE</con:status>
+        <con:properties/>
+      </con:breakPoints>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:requirements/>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:reportTemplates/>
+    <con:xmlTemplates/>
+    <con:xmlTemplates/>
+    <con:parameters/>
+    <con:parameters/>
+  </con:reporting>
+  <con:reporting/>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to SoapUI Pro tests
+
+// If hardcoding the token, uncomment and change line 5
+// def token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// def token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// def headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:authRepository/>
+  <con:tags/>
+</con:soapui-project>
